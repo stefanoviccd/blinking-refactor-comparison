@@ -1,4 +1,5 @@
 import traceback
+import sys
 
 objects_dev = []
 objects_new = []
@@ -89,7 +90,6 @@ def read_file_data(file_path, file_type, object_parts):
                 key_value = line.split('{')
                 key_value[0] = key_value[0].replace(':', '')
                 key_value[1] = '{'+key_value[1]
-                print(key_value[1])
 
                 key_value[1] = parseObject(key_value[1])
                 data[key_value[0].strip()] = key_value[1]
@@ -107,7 +107,6 @@ def read_file_data(file_path, file_type, object_parts):
                                 if object[part]:
                                     pass
                             except:
-                                print('exception')
                                 object[part] = dict()
 
                         if file_type == 'd':
@@ -266,4 +265,6 @@ def compareResults(dev_file_path, new_file_path, object_parts, result_file_path)
     print_results(object_parts, result_file_path)
 
 
-compareResults('MLT/Front/oldFrontside.txt', 'MLT/Front/newFrontside.txt', ['front data'], 'MLT/Front/ResultFront')
+compareResults('/home/blinking/Front/oldFrontSide.txt', '/home/blinking/Front/newFrontSide.txt', ['front data'], '/home/blinking/Front/ResultFront.txt')
+#compareResults(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+
