@@ -1,5 +1,6 @@
 import traceback
 import sys
+import argparse
 
 objects_dev = []
 objects_new = []
@@ -265,6 +266,33 @@ def compareResults(dev_file_path, new_file_path, object_parts, result_file_path)
     print_results(object_parts, result_file_path)
 
 
-compareResults('/home/blinking/Front/oldFrontSide.txt', '/home/blinking/Front/newFrontSide.txt', ['front data'], '/home/blinking/Front/ResultFront.txt')
-#compareResults(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+#compareResults('/home/blinking/Front/oldFrontSide.txt', '/home/blinking/Front/newFrontSide.txt', ['front data'], '/home/blinking/Front/ResultFront.txt')
+CLI=argparse.ArgumentParser()
+CLI.add_argument(
+  "--dev_file_path",
+  #nargs="*",
+  type=str,
+)
+CLI.add_argument(
+  "--new_file_path",
+  #nargs="*",
+  type=str,
+)
+CLI.add_argument(
+  "--keys",
+  nargs="*",
+  type=str,
+    default=['data']
+)
+CLI.add_argument(
+  "--result_file_path",
+  #nargs="*",
+  type=str,
+)
+
+# parse the command line
+args = CLI.parse_args()
+compareResults(args.dev_file_path, args.new_file_path, args.keys, args.result_file_path)
+
+
 
