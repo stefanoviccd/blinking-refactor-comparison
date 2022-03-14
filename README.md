@@ -17,6 +17,8 @@
   
   File paths need to be passed without quotation marks. For --keys parameter, every key is passed with single quotation marks and keys are separated with one blank   space. Key names must be lowercase.
   
-  ‼️ NOTE: Statistics from the end of both dev and new file should be removed before processing files with method.
+  ‼️ NOTE: 
+  Statistics from the end of both dev and new file should be removed before processing files with method.<br/>
+  Script which should be called - CompareData.py
   
 
