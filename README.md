@@ -4,10 +4,10 @@
 
 🔷 Required inputs:
 
-1️⃣ --dev_file_path : absolute path to our first file, whitch we want to compare.
-2️⃣ --new_file_path : absolute path to the second file for comparison
-3️⃣ --keys : key values we expect our objects to contain. Thoose are parts of the document readed (e.g. front data, back data, mrz data)
-4️⃣ --result_file_path : absolute path to the document where we want to write our result. Document can exist, but if not, it will be created on the path and with name specified.
+1️⃣ --dev_file_path : absolute path to our first file, whitch we want to compare.<br/>
+2️⃣ --new_file_path : absolute path to the second file for comparison<br/>
+3️⃣ --keys : key values we expect our objects to contain. Thoose are parts of the document readed (e.g. front data, back data, mrz data)<br/>
+4️⃣ --result_file_path : absolute path to the document where we want to write our result. Document can exist, but if not, it will be created on the path and with name specified.<br/>
 
 
 🔷 Method output: As the result of the method, we get .txt file on the path specified as --result_file_path parameter, whitch displays all the differences between first file, whitch path is specified as --dev_file_path parameter and the second one, on --new_file_path.
