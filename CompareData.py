@@ -205,7 +205,10 @@ def print_results(object_parts, result_file_path):
 
                 f.write(blank_space + double_line)
             except:
-                traceback.print_exc()
+                #traceback.print_exc()
+                f.write(blank_space+'Some data is posibbly missing.\n')
+                continue
+
 
     f.close()
 
@@ -241,7 +244,7 @@ def compareObjects(dev_item, new_item):
                 else:
                     return False
         except:
-            traceback.print_exc()
+           # traceback.print_exc()
             return False
 
     return True
