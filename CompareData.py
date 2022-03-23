@@ -220,7 +220,10 @@ def compareObjects(dev_item, new_item):
         try:
             if type(dev_item[key]) == dict:
                 eq = compareObjects(dev_item[key], new_item[key])
-                return eq
+                if eq:
+                    continue
+                else:
+                    return False
             if (type(dev_item[key]) == str):
                 if (dev_item[key].lower() == new_item[key].lower()):
                     continue
